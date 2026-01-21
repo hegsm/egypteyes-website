@@ -37,15 +37,12 @@
                 <a class="navbar-brand" href="#page-top">Egypt Eyes</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item">
-    <a class="nav-link" href="packages.html" data-bs-target="#services">Our Packages</a>
-</li> 
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">What's Included</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
+                   <ul class="navbar-nav ms-auto my-2 my-lg-0">
+    <li class="nav-item"><a class="nav-link external-link" href="about.html">About</a></li>
+    <li class="nav-item"><a class="nav-link external-link" href="packages.html">Our Packages</a></li>
+    <li class="nav-item"><a class="nav-link" href="#portfolio">What's Included</a></li> <li class="nav-item"><a class="nav-link external-link" href="faq.html">FAQs</a></li>
+    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
                 </div>
             </div>
         </nav>
@@ -318,45 +315,28 @@
         <script src="js/scripts.js"></script>
 
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *        <script>
+        <!-- * *       <script>
     window.addEventListener('scroll', () => {
-        // --- 1. ABOUT SECTION ---
-        const aboutSection = document.querySelector('#about');
-        const aboutLink = document.querySelector('a[href="about.html"]');
-        if (aboutSection && aboutLink) {
-            const pos = aboutSection.getBoundingClientRect();
-            if (pos.top <= 100 && pos.bottom >= 100) {
-                aboutLink.style.setProperty('color', '#f4623a', 'important');
-            } else {
-                aboutLink.style.setProperty('color', '', '');
+        const highlightLink = (sectionId, href) => {
+            const section = document.querySelector(sectionId);
+            const link = document.querySelector(`a[href="${href}"]`);
+            if (section && link) {
+                const pos = section.getBoundingClientRect();
+                // Check if the section is the primary one on screen
+                if (pos.top <= 150 && pos.bottom >= 150) {
+                    link.style.setProperty('color', '#f4623a', 'important');
+                } else {
+                    link.style.setProperty('color', '', '');
+                }
             }
-        }
+        };
 
-        // --- 2. PACKAGES SECTION ---
-        const servicesSection = document.querySelector('#services');
-        const packagesLink = document.querySelector('a[href="packages.html"]');
-        if (servicesSection && packagesLink) {
-            const pos = servicesSection.getBoundingClientRect();
-            if (pos.top <= 100 && pos.bottom >= 100) {
-                packagesLink.style.setProperty('color', '#f4623a', 'important');
-            } else {
-                packagesLink.style.setProperty('color', '', '');
-            }
-        }
-
-        // --- 3. FAQ SECTION ---
-        const faqSection = document.querySelector('#faq');
-        const faqLink = document.querySelector('a[href="faq.html"]');
-        if (faqSection && faqLink) {
-            const pos = faqSection.getBoundingClientRect();
-            if (pos.top <= 100 && pos.bottom >= 100) {
-                faqLink.style.setProperty('color', '#f4623a', 'important');
-            } else {
-                faqLink.style.setProperty('color', '', '');
-            }
-        }
+        // Track our three external-page links in the order they appear on the page
+        highlightLink('#about', 'about.html');
+        highlightLink('#services', 'packages.html');
+        highlightLink('#faq', 'faq.html');
     });
-</script>                       SB Forms JS                               * *-->
+</script>                      SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
