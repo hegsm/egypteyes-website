@@ -317,19 +317,35 @@
         <script src="js/scripts.js"></script>
 <script>
     window.addEventListener('scroll', () => {
-        const section = document.querySelector('#services');
-        const navLink = document.querySelector('a[href="packages.html"]');
-        const position = section.getBoundingClientRect();
+        // --- 1. ABOUT SECTION HIGHLIGHT ---
+        const aboutSection = document.querySelector('#about');
+        const aboutLink = document.querySelector('a[href="about.html"]');
+        
+        if (aboutSection && aboutLink) {
+            const aboutPos = aboutSection.getBoundingClientRect();
+            // Check if user is scrolling over the About section
+            if (aboutPos.top <= 100 && aboutPos.bottom >= 100) {
+                aboutLink.style.setProperty('color', '#f4623a', 'important');
+            } else {
+                aboutLink.style.setProperty('color', '', '');
+            }
+        }
 
-        // If the top of the 'Journey' section is near the top of the screen
-        if (position.top <= 100 && position.bottom >= 100) {
-            navLink.style.color = '#f4623a'; // Orange
-        } else {
-            navLink.style.color = ''; // Back to default
+        // --- 2. PACKAGES SECTION HIGHLIGHT ---
+        const servicesSection = document.querySelector('#services');
+        const packagesLink = document.querySelector('a[href="packages.html"]');
+        
+        if (servicesSection && packagesLink) {
+            const servicesPos = servicesSection.getBoundingClientRect();
+            // Check if user is scrolling over the Journey/Services section
+            if (servicesPos.top <= 100 && servicesPos.bottom >= 100) {
+                packagesLink.style.setProperty('color', '#f4623a', 'important');
+            } else {
+                packagesLink.style.setProperty('color', '', '');
+            }
         }
     });
 </script>
-
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
