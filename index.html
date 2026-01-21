@@ -316,39 +316,47 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-<script>
+
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *        <script>
     window.addEventListener('scroll', () => {
-        // --- 1. ABOUT SECTION HIGHLIGHT ---
+        // --- 1. ABOUT SECTION ---
         const aboutSection = document.querySelector('#about');
         const aboutLink = document.querySelector('a[href="about.html"]');
-        
         if (aboutSection && aboutLink) {
-            const aboutPos = aboutSection.getBoundingClientRect();
-            // Check if user is scrolling over the About section
-            if (aboutPos.top <= 100 && aboutPos.bottom >= 100) {
+            const pos = aboutSection.getBoundingClientRect();
+            if (pos.top <= 100 && pos.bottom >= 100) {
                 aboutLink.style.setProperty('color', '#f4623a', 'important');
             } else {
                 aboutLink.style.setProperty('color', '', '');
             }
         }
 
-        // --- 2. PACKAGES SECTION HIGHLIGHT ---
+        // --- 2. PACKAGES SECTION ---
         const servicesSection = document.querySelector('#services');
         const packagesLink = document.querySelector('a[href="packages.html"]');
-        
         if (servicesSection && packagesLink) {
-            const servicesPos = servicesSection.getBoundingClientRect();
-            // Check if user is scrolling over the Journey/Services section
-            if (servicesPos.top <= 100 && servicesPos.bottom >= 100) {
+            const pos = servicesSection.getBoundingClientRect();
+            if (pos.top <= 100 && pos.bottom >= 100) {
                 packagesLink.style.setProperty('color', '#f4623a', 'important');
             } else {
                 packagesLink.style.setProperty('color', '', '');
             }
         }
+
+        // --- 3. FAQ SECTION ---
+        const faqSection = document.querySelector('#faq');
+        const faqLink = document.querySelector('a[href="faq.html"]');
+        if (faqSection && faqLink) {
+            const pos = faqSection.getBoundingClientRect();
+            if (pos.top <= 100 && pos.bottom >= 100) {
+                faqLink.style.setProperty('color', '#f4623a', 'important');
+            } else {
+                faqLink.style.setProperty('color', '', '');
+            }
+        }
     });
-</script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
+</script>                       SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
