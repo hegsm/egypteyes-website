@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+    /* This forces the 'Our Packages' link to turn orange when ScrollSpy hits the services section */
+    body[data-bs-spy="scroll"] #services:target ~ #mainNav .nav-link[href="packages.html"],
+    #page-top.index-page #mainNav .nav-link.active {
+        color: #f4623a !important; /* This is the Bootstrap Creative orange color */
+    }
+
+    /* Target the specific link when the section is active */
+    .active-section-packages {
+        color: #f4623a !important;
+    }
+</style>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -303,6 +315,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+<script>
+    window.addEventListener('scroll', () => {
+        const section = document.querySelector('#services');
+        const navLink = document.querySelector('a[href="packages.html"]');
+        const position = section.getBoundingClientRect();
+
+        // If the top of the 'Journey' section is near the top of the screen
+        if (position.top <= 100 && position.bottom >= 100) {
+            navLink.style.color = '#f4623a'; // Orange
+        } else {
+            navLink.style.color = ''; // Back to default
+        }
+    });
+</script>
+
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
